@@ -19,7 +19,7 @@ const Header = ({title, image, type}) => {
                 <h1 className="text-white text-4xl md:text-5xl font-bold text-center">{title}</h1>
                 {
                     type && (
-                    <p>Welcome to Good-Food
+                    <p className="text-sm mt-4 text-center text-green-600 bg-[#00000090] px-6 py-4 rounded-full">Welcome to Good-Food
                     <br className="hidden md:block" />
                     Discover a treasure trove of delectable recipes from around the globe.
                     </p>
