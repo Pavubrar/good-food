@@ -1,12 +1,12 @@
-
+import Home from "./pages/Home"
 
 function App() {
   
 
   return (
     <>
-      <div>
-       <h1>Good food</h1>
+      <div className="bg-black">
+     <Home/>
       </div>
       
         
