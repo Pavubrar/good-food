@@ -1,17 +1,25 @@
 
-import { Routes, Route, Outlet } from "react-router-dom"
+import { 
+  Outlet,
+  Route,
+  Routes
+  } from "react-router-dom"
 
 import Home from "./pages/Home"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 //import recipes from "./pages/RecipeDetail"
 import RecipeDetail from "./pages/RecipeDetail"
-function Layout(){
-  <>
+
+const Layout=()=>{
+  return(
+
+    <div>
     <Navbar/>
     <Outlet/>
     <Footer/>
-  </>
+  </div>
+    )
 }
 function App() {
   
@@ -19,13 +27,16 @@ function App() {
   return (
     <>
       <div className="bg-black">
+    
+
+      
       <Routes>
-        < Route path="/" element={<Layout/>}/>
-        < Route main element={<Home/>}/>
+        <Route path="/" element={<Layout/>}>
+        < Route path="/" element={<Home/>}/>
         < Route path="recipes/:id" element={<RecipeDetail/>}/>
-        
+        </Route>
       </Routes>
-     <Home/>
+      
       </div>
       
         
