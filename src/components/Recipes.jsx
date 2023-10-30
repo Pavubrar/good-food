@@ -15,20 +15,20 @@ const Recipes = () => {
     const handleChange =(e)=>{
         setSearch(e.target.value)
     }
-    //  const fetchRecipe = async()=> {
-    //     try{
-    //         const data = await fetchRecipes({search, limit})
-    //         setRecipes(data);
-    //         setLoading(false)
-    //     }catch (error){
-    //         console.log(error);
-    //     } finally{
-    //         setLoading(false)
-    //     }
-    //  }
+     const fetchRecipe = async()=> {
+        try{
+            const data = await fetchRecipes({search, limit})
+            setRecipes(data);
+            setLoading(false)
+        }catch (error){
+            console.log(error);
+        } finally{
+            setLoading(false)
+        }
+     }
      useEffect(()=>{
         setLoading(true)
-            fetchRecipes(search).then((response)=>{
+            fetchRecipe(search).then((response)=>{
                 setRecipes(response)
                 console.log(response)
             })
