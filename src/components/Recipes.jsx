@@ -4,7 +4,7 @@ import {BsSearchHeart} from 'react-icons/bs'
 import Loading from './Loading'
 import SearchBar from './SearchBar'
 import RecipeCard from './RecipeCard'
-import { fetchRecipes } from '../utils/FetchData,jsx'
+import { fetchRecipes } from '../utils/FetchData'
 const Recipes = () => {
     const [recipes, setRecipes] =useState([])
     const [search, setSearch] =useState('vegan')
