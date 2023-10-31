@@ -28,11 +28,18 @@ const Recipes = () => {
         }
      }
      const showMore=()=>{
-        
+        setLimit(prev => prev + 10)
+        fetchRecipe()
+        console.log('show more')
      }
+     const handleSearchRecipe = async (e)=>{
+        e.preventDefault()
+        fetchRecipe()
+    }
      useEffect(()=>{
         setLoading(true)
            fetchRecipe()
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             },[])
     if(loading){
         return(
@@ -42,10 +49,10 @@ const Recipes = () => {
   return (
     <div className='w-full'>
     <div className='w-full flex items-center justify-center pt-10 pb-5 px-0 md:px-10'>
-      <form className='w-full lg:w-2/4'>
+      <form onSubmit={handleSearchRecipe} className='w-full lg:w-2/4'>
        <SearchBar placeholder='eg. Cake, Vegan, Chicken'
         handleInputChange={handleChange}
-       rightIcon={<BsSearchHeart className="text-gray-600"/>}/>
+       rightIcon={<BsSearchHeart className="text-gray-600"/>} />
     
       </form>
 
