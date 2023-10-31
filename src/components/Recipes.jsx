@@ -15,6 +15,7 @@ const Recipes = () => {
     const handleChange =(e)=>{
         setSearch(e.target.value)
     }
+    
      const fetchRecipe = async()=> {
         try{
             const data = await fetchRecipes({search, limit})
@@ -26,15 +27,13 @@ const Recipes = () => {
             setLoading(false)
         }
      }
+     const showMore=()=>{
+        
+     }
      useEffect(()=>{
         setLoading(true)
-            fetchRecipe(search).then((response)=>{
-                setRecipes(response)
-                console.log(response)
-            })
-        
-     },[])
-
+           fetchRecipe()
+            },[])
     if(loading){
         return(
             <Loading/>
@@ -54,16 +53,19 @@ const Recipes = () => {
     {
         recipes?.length >0 ? (
             <>
-                <div className='w-full flex flex-wrap gap-10 px-0 lg:px-10 py-10'>
+                <div className='w-full flex flex-wrap gap-10 px-0 lg:px-10 py-10 '>
                     {
                         recipes?.map((item, index)=>(
-                            <RecipeCard recipes={recipes} key="index"
-                            />
-                        )
-                        )
-                    }
+                            <RecipeCard recipe={item} key={index}/>
+                            
+                        ))}
+                       
+                </div>
+                <div className='flex w-full items-center justify-center py-10'>
+                    <button className='bg-green-800 text-white px-1 py-1 rounded-full text-sm' onClick={showMore}>Show More</button>
                 </div>
             </>
+           
         ): <div className='text-white w-full items-center justify-center py-10'> 
             <p className='text-center'>No Recipe Found</p>
         </div>

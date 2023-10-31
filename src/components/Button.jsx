@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 
+
 const Button = ({
     isDisabled, 
     btnType,
@@ -10,6 +11,7 @@ const Button = ({
     rightIcon,
     handleClick
 }) =>{
+  
   return (
    <button disabled={isDisabled ?? false}
    type ={btnType || 'button'}
@@ -22,5 +24,6 @@ const Button = ({
    </button>
   )
 }
+
 
 export default Button
