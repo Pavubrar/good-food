@@ -30,7 +30,7 @@ function Navbar() {
 </ul>
 <Button title="Sign in" 
     // eslint-disable-next-line react/no-unknown-property
-    containerStyle= ' hidden md:block bg-transparent border border-white text-yellow hover:bg-white hover:tex-slate-700 rounded-full min-w-[130px] '
+    containerStyle= ' hidden md:block bg-transparent border border-white text-yellow hover:bg-white hover:tex-green-900 rounded-full min-w-[130px] '
 />
 <button className="block md:hidden text-white text-2xl" onClick={()=> setOpen(prev => !prev)}>
     {open ? <AiOutlineClose/> : <HiMenuAlt3/>}
